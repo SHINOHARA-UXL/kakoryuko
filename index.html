@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>過去の流行掲示板</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>過去の流行掲示板</h1>
+
+        <!-- 投稿画面 -->
+        <div id="postSection" class="section" style="display: none;">
+            <h2>投稿画面</h2>
+            <form id="postForm">
+                <textarea id="postContent" placeholder="投稿内容を入力してください..."></textarea>
+                <div id="selectDate">
+                    <label for="postYear">年</label>
+                    <select id="postYear" required></select>
+                    <label for="postMonth">月</label>
+                    <select id="postMonth" required></select>
+                </div>
+                <button type="submit">投稿する</button>
+            </form>
+            <button id="viewPostsButton">投稿一覧へ移動</button>
+        </div>
+
+        <!-- 投稿一覧画面 -->
+        <div id="viewSection" class="section" style="display: none;">
+            <h2>投稿一覧</h2>
+            <div id="selectDate">
+                <label for="yearSelect">年</label>
+                <select id="yearSelect"></select>
+                <label for="monthSelect">月</label>
+                <select id="monthSelect"></select>
+            </div>
+            <button id="goToDate">選択した年月の投稿を表示</button>
+            <div id="postsContainer"></div>
+            <button id="goToTopPostsButton">年代別トップ投稿を表示</button>
+        </div>
+
+        <!-- 年月ごとの最もいいね数が多い投稿を表示 -->
+        <div id="topPostsSection" class="section" style="display: none;">
+            <h2>年月ごとの最もいいね数が多い投稿</h2>
+            <div id="topPostsContainer"></div>
+            <button id="backToViewPostsButton">投稿一覧へ戻る</button>
+        </div>
+
+        <!-- ボトム固定ボタン -->
+        <button class="bottom-button" id="backToPostButton">投稿画面へ移動</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
